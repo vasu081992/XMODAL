@@ -59,10 +59,11 @@ function Modal() {
 
   const FormValidate = () =>{
 
-if(formData.username.length<4){
-  alert("User name should be more than 4 characters")
-  return false
-}
+// if(formData.username.length<4){
+//   alert("User name should be more than 4 characters")
+//   return false
+// }
+
 if(!formData.email){
   alert("Invalid email. Please check your email address.")
   return false
@@ -70,12 +71,12 @@ if(!formData.email){
 }
 
 if(formData.phone.length!==10 ){
-  alert("Invalid phone number")
+  alert("Invalid phone number.Please enter a 10-digit phone number.")
   return false
 }
 
 if(!formData.dob){
-  alert("Invalid date of birth")
+  alert("Invalid date of birth.Date of birth cannot be in future.")
 return false
 }
 
