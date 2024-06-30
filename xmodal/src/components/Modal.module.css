@@ -1,0 +1,13 @@
+.title{
+  color:red
+}
+.button{
+  width:75px;
+  padding:5px;
+  background-color: blue;
+  color:white;
+  border:none;
+  border-radius: 10px;
+  cursor: pointer;
+
+}
