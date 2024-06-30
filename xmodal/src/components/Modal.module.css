@@ -1,13 +1,16 @@
 .title{
   color:red
 }
-.button{
-  width:75px;
-  padding:5px;
+
+
+
+.buttonform{
   background-color: blue;
   color:white;
+  padding:10px;
+  border-radius: 5px;
+  width:110px;
   border:none;
-  border-radius: 10px;
+  margin-bottom: 10px;
   cursor: pointer;
-
 }

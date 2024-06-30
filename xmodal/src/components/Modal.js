@@ -75,6 +75,11 @@ if(formData.phone.length<10 || formData.phone.length>10 ){
 
 }
 
+if(!formData.dob){
+  alert("Invalid date of birth.")
+return false
+}
+
 let currentDate = new Date()
 
 let selectedDate = new Date(formData.dob)
@@ -114,7 +119,7 @@ return true
       <h1 className={styles.title}> User Details Modal</h1>
   
    
-      <button className={styles.button} onClick={handleModal}>Open Form</button>
+      <button className={styles.buttonform} onClick={handleModal}>Open Form</button>
       </div>
 
       {isOpen && (
