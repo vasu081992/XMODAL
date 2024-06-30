@@ -75,7 +75,7 @@ if(formData.phone.length!==10 ){
 }
 
 if(!formData.dob){
-  alert("Invalid date of birth.")
+  alert("Invalid date of birth")
 return false
 }
 
@@ -160,7 +160,6 @@ return true
                  id="phone"
                  onChange={handleUsername} 
                  value={formData.phone}
-
                   />
                 </div>
                 <br/>
@@ -172,7 +171,6 @@ return true
                 id="dob"
                 onChange={handleUsername} 
                 value={formData.dob}
-
                 />
                 </div>
                 <br/>
