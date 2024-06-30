@@ -69,7 +69,7 @@ if(!formData.email){
 
 }
 
-if(formData.phone.length<10){
+if(formData.phone.length<10 || formData.phone.length>10 ){
   alert("Invalid phone number. Please enter a 10-digit phone number.")
   return false
 
@@ -97,7 +97,12 @@ return true
     console.log("validate state now",validate)
 
     if(validate){
-      setFormData({})
+      setFormData({
+        username: "",
+        email: "",
+        phone: "",
+        dob: ""
+      })
     }
 
   }
@@ -139,6 +144,7 @@ return true
                 <input id="email" 
                 type="email"
                  onChange={handleUsername} 
+                 value={formData.email}
                 />
                 </div>
               <br />
@@ -149,6 +155,8 @@ return true
                 <input type="number"
                  id="phone"
                  onChange={handleUsername} 
+                 value={formData.phone}
+
                   />
                 </div>
                 <br/>
@@ -159,6 +167,8 @@ return true
                 <input type="date" 
                 id="dob"
                 onChange={handleUsername} 
+                value={formData.dob}
+
                 />
                 </div>
                 <br/>
