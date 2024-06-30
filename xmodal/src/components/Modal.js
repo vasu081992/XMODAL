@@ -29,6 +29,8 @@ function Modal() {
 
   const handleClickOutside = (event) => {
 
+    console.log("dom element clicked", modalRef.current)
+
     if (modalRef.current && !modalRef.current.contains(event.target)) {
       closeModal();
     }
@@ -53,15 +55,50 @@ function Modal() {
     const {id,value}=e.target
     setFormData({...formData,[id]:value})
   }
+
+
   const FormValidate = () =>{
 
+if(formData.username.length<4){
+  alert("User name should be more than 4 characters")
+  return false
+}
+if(!formData.email){
+  alert("Invalid email. Please check your email address.")
+  return false
 
+}
+
+if(formData.phone.length<10){
+  alert("Invalid phone number. Please enter a 10-digit phone number.")
+  return false
+
+}
+
+let currentDate = new Date()
+
+let selectedDate = new Date(formData.dob)
+
+if(selectedDate>currentDate){
+  alert("Invalid date of birth.")
+  return false
+
+}
+return true
 
   }
+
+
   const handleSubmit = (e)=>{
     e.preventDefault();
 
     let validate = FormValidate()
+
+    console.log("validate state now",validate)
+
+    if(validate){
+      setFormData({})
+    }
 
   }
 
@@ -82,7 +119,7 @@ function Modal() {
               &times;
             </span> */}
             <h2>Fill Details</h2>
-            <form>
+            <form onSubmit={handleSubmit}>
               {/* Your form elements go here */}
               <label>
                 UserName:
@@ -92,7 +129,7 @@ function Modal() {
                 id="username"
                 value={formData.username}
                 onChange={handleUsername} 
-                required/>
+                />
                 </div>
               <br />
                 <label> 
@@ -102,7 +139,7 @@ function Modal() {
                 <input id="email" 
                 type="email"
                  onChange={handleUsername} 
-                required/>
+                />
                 </div>
               <br />
               <label> 
@@ -112,7 +149,7 @@ function Modal() {
                 <input type="number"
                  id="phone"
                  onChange={handleUsername} 
-                  required/>
+                  />
                 </div>
                 <br/>
                 <label> 
@@ -122,10 +159,10 @@ function Modal() {
                 <input type="date" 
                 id="dob"
                 onChange={handleUsername} 
-                required/>
+                />
                 </div>
                 <br/>
-              <button type="submit" className='submit-button' onSubmit={handleSubmit}>Submit</button>
+              <button type="submit" className='submit-button' >Submit</button>
             </form>
           </div>
         </div>
