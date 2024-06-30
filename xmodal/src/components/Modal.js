@@ -70,7 +70,7 @@ if(!formData.email){
 }
 
 if(formData.phone.length<10 || formData.phone.length>10 ){
-  alert("Invalid phone number. Please enter a 10-digit phone number.")
+  alert("Invalid phone number")
   return false
 
 }
