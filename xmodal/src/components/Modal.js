@@ -79,9 +79,9 @@ if(!formData.dob){
 return false
 }
 
-let currentDate = new Date()
+let currentDate = new Date().toISOString().split('T')[0]
 
-let selectedDate = new Date(formData.dob)
+let selectedDate = new Date(formData.dob).toISOString().split('T')[0]
 
 if(selectedDate>currentDate){
   alert("Invalid date of birth.")
