@@ -69,10 +69,9 @@ if(!formData.email){
 
 }
 
-if(formData.phone.length<10 || formData.phone.length>10 ){
+if(formData.phone.length!==10 ){
   alert("Invalid phone number")
   return false
-
 }
 
 if(!formData.dob){
@@ -157,7 +156,7 @@ return true
                 Phone Number:
                 </label>
                 <div> 
-                <input type="number"
+                <input type="text"
                  id="phone"
                  onChange={handleUsername} 
                  value={formData.phone}
